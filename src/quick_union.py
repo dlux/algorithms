@@ -9,7 +9,7 @@ Operations can be intermixed (Find queries or union operand)
 
 @author: luzC
 '''
-from datatypes.ds_union_find import UF
+from src.datatypes.ds_union_find import UF
 
 
 class QUICK_UNION(UF):

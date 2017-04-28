@@ -9,7 +9,7 @@ Operations can be intermixed (Find queries or union operand)
 
 @author: luzC
 '''
-from datatypes.ds_union_find import UF
+from src.datatypes.ds_union_find import UF
 
 
 class QUICK_FIND(UF):
@@ -34,7 +34,7 @@ class QUICK_FIND(UF):
         Find out if there is a conexion between 2 given objects
         '''
         if p_obj not in range(self._n) or q_obj not in range(self._n):
-            error(101)
+            self.error(101)
 
         return True if self._cc[p_obj] == self._cc[q_obj] else False
 

@@ -32,10 +32,10 @@ setup(
         ],
     entry_points = {
          'console_scripts':[
-             'dlux_alg = src.main:main',
+             'dlux_alg = src.cmd.main:main',
              ],
          'dlux_alg.cm':[
-             'quick_find = src.client_union_find:main',
+             'union-find = src.cmd.union_find:UNIONFIND',
              ]	
          }
 )

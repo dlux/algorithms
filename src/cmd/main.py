@@ -11,8 +11,8 @@ class Main(app.App):
 
     def __init__(self):
         super(Main, self).__init__(
-            description='Dlux cli to run algorithm implementations',
-            version='1.0.0',# sys.modules.items() module.__version__ 
+            description='Dlux CLI to run algorithm implementations',
+            version='1.0.0',# sys.modules.items() module.__version__
             command_manager=commandmanager.CommandManager('dlux_alg.cm'),
             deferred_help=True,
             )
