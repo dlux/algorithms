@@ -19,7 +19,9 @@ For all algorithms or details of the input for an algorithm:
 Run the clients directly from src/cmd:
 
 .. code-block:: bash
-    python3 union_find.py
+
+    python3 cl_union_find.py
+
 
 **INSTALLATION**
 
@@ -39,31 +41,28 @@ Install package from src
 
 Package Structure
 
-..code-block:: bash
+.. code-block:: bash
 
-dluxAlgorithms
-├── 
-├── LICENSE
-├── README.rst
-├── requirements.txt
-├── setup.py
-├── src
-│   ├── binary_search.py
-│   ├── cmd
-│   │   ├── client_template.py
-│   │   ├── __init__.py
-│   │   ├── main.py
-│   │   ├── three_sum.py
-│   │   └── union_find.py
-│   ├── common.py
-│   ├── datatypes
-│   │   ├── ds_union_find.py
-│   │   ├── __init__.py
-│   ├── __init__.py
-│   ├── quick_find.py
-│   ├── quick_union.py
-│   └── three_sum.py
-└── tests
+    dluxAlgorithms
+    ├── 
+    ├── LICENSE
+    ├── README.rst
+    ├── requirements.txt
+    ├── setup.py
+    ├── src
+    │   ├── binary_search.py
+    │   ├── cmd
+    │   │   ├── client_template.py
+    │   │   ├── main.py
+    │   │   ├── cl_three_sum.py
+    │   │   └── cl_union_find.py
+    │   ├── common.py
+    │   ├── datatypes
+    │   │   ├── ds_union_find.py
+    │   ├── quick_find.py
+    │   ├── quick_union.py
+    │   └── three_sum.py
+    └── tests
 
 PROBLEMS AND ALGORITHMS
 ~~~~~~~~~~~~~~~~~~~~~~~

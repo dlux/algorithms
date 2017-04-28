@@ -35,7 +35,7 @@ setup(
              'dlux_alg = src.cmd.main:main',
              ],
          'dlux_alg.cm':[
-             'union-find = src.cmd.union_find:UNIONFIND',
+             'union-find = src.cmd.cl_union_find:UNIONFIND',
              ]	
          }
 )

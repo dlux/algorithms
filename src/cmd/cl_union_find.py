@@ -6,39 +6,47 @@ class UNIONFIND(command.Command):
 
     log = logging.getLogger(__name__)
 
+    def _print(self):
+        msg='Cambios AQUI.'
+        print(msg)
+        self.log.info(msg)
+
     def take_action(self, parsed_args):
-        import pdb;pdb.set_trace()
-        method = 0 if len(parsed_args) == 0 else parsed_args[0]
-        self.run(method)
+        method = 0
+        if hasattr(parsed_args, 'algx'):
+            method = parsed_args.algx
+                
+        self._run(method)
 
     def get_parser(self, prog_name):
         parser = super(UNIONFIND, self).get_parser(prog_name)
         parser.add_argument('-a', '--algorithm',
-                    choices=['quick_sort', 'quick_union',
+                    choices=['quick_find', 'quick_union',
                              'quick_union1', 'quick_union2'],
-                    default='quick_sort',
+                    dest='algx',
+                    default='quick_find',
                     help='Implemented algorithm.')
         return parser
 
     def get_description(self):
         return ("Implementation to solve union-find problem.")
 
-    def run(self, method):
-        if method == '1':
-            # parameter is equals 1 - then use QUICK UNION
+    def _run(self, method):
+        if method == 'quick_union':
+            # Use QUICK UNION
             self.log.info("Using QUICK UNION method - simple tree")
             from src.quick_union import QUICK_UNION as UF
-        elif method == '2':
-            # parameter is equals 2 - then use QUICK UNION OPTIMIZED
+        elif method == 'quick_union1':
+            # Use QUICK UNION OPTIMIZED - weight
             self.log.info("Using QUICK UNION OPTIMIZED method - weighted tree")
             from src.quick_union import QUICK_UNION_OPTIMIZED as UF
-        elif method == '3':
-            # parameter is equals 2 - then use QUICK UNION OPTIMIZED
+        elif method == 'quick_union2':
+            # Use QUICK UNION OPTIMIZED - weight and flatten
             self.log.info("Using QUICK UNION OPTIMIZED method - weighted tree & flatten")
             from src.quick_union import QUICK_UNION_OPTIMIZED_PATH_COMPRESSION as UF
         else:
-            self.log.info("Using QUICK FIND method - simple array. DEFAULT METHOD")
             # Use QUICK FIND - DEFAULT
+            self.log.info("Using QUICK FIND method - simple array. DEFAULT METHOD")
             from src.quick_find import QUICK_FIND as UF
 
         # Ask for the number of objects ti create
@@ -60,4 +68,4 @@ class UNIONFIND(command.Command):
 
 if __name__ == "__main__":
     mm = UNIONFIND("","")
-    mm.run(0)
+    mm.run()
