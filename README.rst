@@ -12,15 +12,15 @@ For all algorithms or details of the input for an algorithm:
 
 .. code-block:: bash
 
-    dlux_alg
-    dlux_alg --help
-    dluz_alg union-find  --help
+    dlux_algo
+    dlux_algo --help
+    dlux_algo union-find  --help
 
 Run the clients directly from src/cmd:
 
 .. code-block:: bash
 
-    python3 cl_union_find.py
+    python3 client_union_find.py
 
 
 **INSTALLATION**
@@ -31,13 +31,19 @@ Clone the repository
 
   $ git clone https://github.com/dlux/algorithms.git 
 
-Install package from src
+Install package from src or use Vagrant VM
 
 .. code-block:: bash
 
+  $ pushd algorithms
+  
   $ pip install -e ./
-  # To verify instalation:
+  # OR
+  $ vagrant up; vagrant ssh
+  
+  # To verify installation:
   $ pip list | grep dluxAlgorithms
+
 
 Package Structure
 
@@ -54,8 +60,8 @@ Package Structure
     │   ├── cmd
     │   │   ├── client_template.py
     │   │   ├── main.py
-    │   │   ├── cl_three_sum.py
-    │   │   └── cl_union_find.py
+    │   │   ├── client_three_sum.py
+    │   │   └── client_union_find.py
     │   ├── common.py
     │   ├── datatypes
     │   │   ├── ds_union_find.py
@@ -100,7 +106,7 @@ Connected components are sets which contains the objects that are connected. Uni
 
 * Using quick find algorithm
 
-* Using quick find algorithm
+* Using quick union algorithm
 
 **Implementation Files**
 
@@ -108,8 +114,8 @@ Under src folder:
 
 * datatype/ds_union_find.py # DataStructure
 * client_union_find.py     # Client for quick_find and quick_union
-* quick_find.py            # Actual implementation
-* quick_union.py           # Actual implementation
+* quick_find.py            # Actual algorithm implementation
+* quick_union.py           # Actual algorithm implementation
 
 Three Sum Algorithm
 ~~~~~~~~~~~~~~~~~~~
