@@ -12,9 +12,9 @@ For all algorithms or details of the input for an algorithm:
 
 .. code-block:: bash
 
-    dlux_algo
-    dlux_algo --help
-    dlux_algo union-find  --help
+    dlux_alg
+    dlux_alg --help
+    dlux_alg union-find  --help
 
 Run the clients directly from src/cmd:
 
@@ -36,10 +36,13 @@ Install package from src or use Vagrant VM
 .. code-block:: bash
 
   $ pushd algorithms
-  
   $ pip install -e ./
+
   # OR
-  $ vagrant up; vagrant ssh
+
+  $ pushd algorithms
+  $ vagrant up;
+  $ vagrant ssh
   
   # To verify installation:
   $ pip list | grep dluxAlgorithms

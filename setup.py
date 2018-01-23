@@ -3,6 +3,12 @@
 
 from setuptools import setup, find_packages
 
+
+# Install requirements from requirements.txt
+requirements=[]
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
 setup(
     # Package details
     name = 'dluxAlgorithms',
@@ -16,6 +22,7 @@ setup(
     url = 'https://github.com/dlux/algorithms',
     test_suite='tests',
     keywords = ['dlux', 'algorithms', 'mypackage'],
+    install_requires=requirements,
 
     # Additional metadata
     classifier = [
@@ -35,7 +42,7 @@ setup(
              'dlux_alg = src.cmd.main:main',
              ],
          'dlux_alg.cm':[
-             'union-find = src.cmd.cl_union_find:UNIONFIND',
+             'union-find = src.cmd.client_union_find:UNIONFIND',
              ]	
          }
 )
